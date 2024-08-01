@@ -12,10 +12,9 @@ const Navbar = () => {
   };
 
   return (
-    <div className={`fixed top-0 left-0 w-full h-16 bg-transparent border-b border-gray-700 z-10 backdrop-filter backdrop-blur-lg`}>
+    <div className={`fixed top-0 z-50 left-0 w-full h-16 bg-transparent border-b border-gray-700  backdrop-filter backdrop-blur-lg`}>
       <nav className="container mx-auto h-full flex items-center justify-between px-4">
-        <div className="hover:text-gray-300 cursor-pointer transition-colors duration-200">Logo</div>
-        <div className="ml-4 hidden lg:flex space-x-6">
+         <div className="ml-36 hidden lg:flex space-x-20 text-lg ">
           <Link to="/" className="hover:text-gray-300 cursor-pointer transition-colors duration-200">Home</Link>
           <Link to="/blog" className="hover:text-gray-300 cursor-pointer transition-colors duration-200">Blog</Link>
           <Link to="/podcast" className="hover:text-gray-300 cursor-pointer transition-colors duration-200">Podcast</Link>
@@ -27,7 +26,7 @@ const Navbar = () => {
         >
           <FaBars />
         </button>
-        <div className="ml-4">
+        <div className="mr-10">
           <ThemeToggle />
         </div>
       </nav>

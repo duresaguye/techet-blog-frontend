@@ -1,28 +1,26 @@
+// src/components/BlogPosts.js
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-// Sample blog data
-const blogPosts = [
-  { id: '1', title: 'First Blog Post', imageUrl: 'https://via.placeholder.com/600x400', excerpt: 'This is a brief excerpt of the first blog post.' },
-  { id: '2', title: 'Second Blog Post', imageUrl: 'https://via.placeholder.com/600x400', excerpt: 'This is a brief excerpt of the second blog post.' },
-  { id: '1', title: 'First Blog Post', imageUrl: 'https://via.placeholder.com/600x400', excerpt: 'This is a brief excerpt of the first blog post.' },
-  { id: '2', title: 'Second Blog Post', imageUrl: 'https://via.placeholder.com/600x400', excerpt: 'This is a brief excerpt of the second blog post.' },
-  { id: '1', title: 'First Blog Post', imageUrl: 'https://via.placeholder.com/600x400', excerpt: 'This is a brief excerpt of the first blog post.' },
-  { id: '2', title: 'Second Blog Post', imageUrl: 'https://via.placeholder.com/600x400', excerpt: 'This is a brief excerpt of the second blog post.' },
-  
-];
+const BlogPosts = ({ posts }) => {
+  if (posts.length === 0) return <div>No blog posts available.</div>;
 
-const BlogPosts = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-      {blogPosts.map(post => (
-        <div key={post.id} className="bg-white shadow-md rounded-lg overflow-hidden">
-          <img src={post.imageUrl} alt={post.title} className="w-full h-48 object-cover" />
-          <div className="p-4">
-            <h2 className="text-xl font-bold mb-2">{post.title}</h2>
-            <p className="text-gray-700">{post.excerpt}</p>
-            <Link to={`/blog/${post.id}`} className="text-blue-500 hover:underline mt-2 block">Read More</Link>
-          </div>
+    <div className="flex flex-wrap justify-center">
+      {posts.map(post => (
+        <div
+          key={post.id}
+          className="border border-gray-200 shadow-lg rounded-lg p-4 m-4 max-w-xs transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:border-blue-400 "
+        >
+          <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
+          {post.featured_image && (
+            <img
+              src={post.featured_image}
+              alt={post.title}
+              className="w-full h-40 object-cover rounded mb-2"
+            />
+          )}
+          <p>{post.content.substring(0, 100)}...</p>
+          <a href={`/posts/${post.id}`} className="text-blue-500 hover:underline">Read more</a>
         </div>
       ))}
     </div>

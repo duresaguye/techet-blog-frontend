@@ -8,7 +8,7 @@ const Sidebar = ({ isOpen, onClose }) => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-64 h-full transform ${
+      className={`fixed top-0 z-50 left-0 w-64 h-full transform ${
         isOpen ? 'translate-x-0' : '-translate-x-full'
       } transition-transform duration-300 ease-in-out z-50 ${
         isDarkMode ? 'bg-gray-900 bg-opacity-100 text-white' : 'bg-white bg-opacity-100 text-gray-900'

@@ -8,6 +8,8 @@ import Blog from './pages/Blog';
 import Podcast from './pages/Podcast';
 import About from './pages/About';
 import SingleBlog from './pages/SingleBlog';
+import PostDetail from './pages/PostDetail';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -20,7 +22,9 @@ const App = () => {
           <Route path="/podcast" element={<Podcast />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog/:id" element={<SingleBlog />} />
+          <Route path="/posts/:id" element={<PostDetail />} />
         </Routes>
+         <Footer />
       </div>
     </Router>
   );
