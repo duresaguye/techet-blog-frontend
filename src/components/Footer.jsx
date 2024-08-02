@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaTelegramPlane, FaYoutube } from 'react-icons/fa';
+import { FaGithub, FaTelegramPlane, FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -8,20 +8,22 @@ const Footer = () => {
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
         <div className="mb-4 md:mb-0 ">
           <a
-            href="https://t.me/yourtelegramchannel"
+            href="https://t.me/TechInEthio"
             className="inline-flex items-center justify-center w-12 h-12 bg-blue-500 hover:bg-blue-700 rounded-full text-white font-bold mr-4"
           >
             <FaTelegramPlane className="text-xl" />
           </a>
           <a
-            href="https://youtube.com/youryoutubechannel"
+            href="https://www.youtube.com/@Techinethio"
             className="inline-flex items-center justify-center w-12 h-12 bg-red-500 hover:bg-red-700 rounded-full text-white font-bold"
           >
             <FaYoutube className="text-xl" />
           </a>
         </div>
         <div className="text-center md:text-right ">
-          <p className="text-sm">Developed by Techኢት Team</p>
+          <a href="https://github.com/duresaguye"> <p className="text-sm">Developed by Dura</p></a>
+          <FaGithub className="text-3xl" />
+         
         </div>
       </div>
     </footer>
