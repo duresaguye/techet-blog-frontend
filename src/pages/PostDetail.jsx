@@ -1,7 +1,7 @@
 // src/components/PostDetail.js
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 
 const PostDetail = () => {
   const { id } = useParams();
@@ -10,6 +10,8 @@ const PostDetail = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    // Uncomment this block to fetch real data from the API
+    /*
     axios.get(`http://localhost:8000/api/posts/${id}/`)
       .then(response => {
         setPost(response.data);
@@ -20,6 +22,45 @@ const PostDetail = () => {
         setLoading(false);
         console.error('There was an error fetching the post!', error);
       });
+    */
+
+    // Fake post data
+    const fakePosts = [
+      {
+        id: 1,
+        title: 'Understanding React Hooks',
+        content: '<p>React Hooks are functions that let you use state and other React features without writing a class. In this post, we will explore the basics of useState and useEffect hooks.</p>',
+        featured_image: 'https://via.placeholder.com/800x400?text=React+Hooks',
+        published_date: '2024-08-01',
+      },
+      {
+        id: 2,
+        title: 'Introduction to Tailwind CSS',
+        content: '<p>Tailwind CSS is a utility-first CSS framework for creating custom designs without having to leave your HTML. This post will guide you through the basics of using Tailwind CSS in your projects.</p>',
+        featured_image: 'https://via.placeholder.com/800x400?text=Tailwind+CSS',
+        published_date: '2024-08-02',
+      },
+      {
+        id: 3,
+        title: 'How to Build a REST API with Django',
+        content: '<p>Django is a powerful web framework for building web applications. This post will cover the essentials of creating a REST API with Django and how to use Django REST Framework.</p>',
+        featured_image: 'https://via.placeholder.com/800x400?text=Django+REST+API',
+        published_date: '2024-08-03',
+      },
+    ];
+
+    // Find the post with the matching ID
+    const post = fakePosts.find(p => p.id === parseInt(id));
+    
+    // Simulate fetching data
+    setTimeout(() => {
+      if (post) {
+        setPost(post);
+      } else {
+        setError('Post not found');
+      }
+      setLoading(false);
+    }, 1000);
   }, [id]);
 
   if (loading) return <div className="flex justify-center items-center h-screen text-gray-500">Loading...</div>;
@@ -29,7 +70,7 @@ const PostDetail = () => {
   return (
     <div className="p-6 md:p-12 mx-auto max-w-3xl mt-10">
       {post && (
-        <article className="light:bg-gray-900 text-gray-600 shadow-lg rounded-lg overflow-hidden">
+        <article className=" shadow-lg rounded-lg overflow-hidden">
           {post.featured_image && (
             <img 
               src={post.featured_image} 
@@ -38,10 +79,10 @@ const PostDetail = () => {
             />
           )}
           <header className="p-6">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
               {post.title}
             </h1>
-            <p className="text-gray-600 dark:text-gray-400 text-lg mb-6">
+            <p className="text-lg mb-6">
               {new Date(post.published_date).toLocaleDateString()}
             </p>
           </header>

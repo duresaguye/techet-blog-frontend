@@ -5,10 +5,10 @@
 
 /* Light theme */
 body.light {
-  @apply bg-white text-gray-950;
+  @apply bg-white text-gray-900;
 }
 
 /* Dark theme */
 body.dark {
-  @apply bg-gray-950 text-white;
+  @apply bg-gray-900 text-white;
 }
