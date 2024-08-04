@@ -79,7 +79,7 @@ const PostDetail = () => {
             />
           )}
           <header className="p-6">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-green-500 mb-3">
               {post.title}
             </h1>
             <p className="text-lg mb-6">
