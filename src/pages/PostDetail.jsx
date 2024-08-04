@@ -70,7 +70,7 @@ const PostDetail = () => {
   return (
     <div className="p-6 md:p-12 mx-auto max-w-3xl mt-10">
       {post && (
-        <article className=" shadow-lg rounded-lg overflow-hidden">
+        <article className="shadow-lg rounded-lg overflow-hidden">
           {post.featured_image && (
             <img 
               src={post.featured_image} 
