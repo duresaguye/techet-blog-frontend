@@ -35,7 +35,7 @@ const Podcast = () => {
       {
         id: 3,
         embed_url: 'https://www.youtube.com/embed/5ocNYkEj3fk?si=ez0HNoUswDUyVp6N', 
-        title: 'TechNerd and DesignGuru',
+        title: 'Techኢት Podcast TechNerd and DesignGuru',
       },
     ];
 
