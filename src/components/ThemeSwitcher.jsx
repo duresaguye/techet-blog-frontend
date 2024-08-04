@@ -1,10 +1,17 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 import { FaSun, FaMoon } from 'react-icons/fa';
 
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const [isOpen, setIsOpen] = useState(false);
+
+ 
+  useEffect(() => {
+    if (!theme) {
+      toggleTheme('dark');
+    }
+  }, [theme, toggleTheme]);
 
   const handleToggle = (newTheme) => {
     toggleTheme(newTheme);
