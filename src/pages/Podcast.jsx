@@ -1,9 +1,8 @@
-// src/components/Podcast.js
 import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
 
 const Podcast = () => {
   const [podcasts, setPodcasts] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     // Uncomment this block to fetch real data from the API
@@ -45,11 +44,25 @@ const Podcast = () => {
     }, 1000);
   }, []);
 
+  const filteredPodcasts = podcasts.filter(podcast =>
+    podcast.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="p-4 mt-20">
-      <h1 className="text-3xl font-bold mb-6">Podcasts</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center">Podcasts</h1>
+      <div className="flex justify-center mb-6">
+        <input
+          type="text"
+          placeholder="Search podcasts..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="p-2 border border-gray-300 rounded"
+        />
+      </div>
+      
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {podcasts.map((podcast, index) => (
+        {filteredPodcasts.map((podcast) => (
           <div key={podcast.id} className="shadow-md rounded-lg overflow-hidden">
             <div className="relative">
               <iframe
@@ -64,7 +77,6 @@ const Podcast = () => {
             </div>
             <div className="p-4">
               <h2 className="text-xl font-semibold mb-2">{podcast.title}</h2>
-             
             </div>
           </div>
         ))}

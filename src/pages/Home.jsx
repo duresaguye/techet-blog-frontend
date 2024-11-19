@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import WelcomeMessage from '../components/WelcomeMessage';
 import Tags from '../components/Tags';
 import BlogPosts from '../components/BlogPosts';
+import UpcomingEvents from '../components/UpcomingEvents';
+import FeaturedPodcasts from '../components/FeaturedPodcasts';
 // import axios from 'axios';
 
 const Home = () => {
@@ -72,6 +74,8 @@ const Home = () => {
   return (
     <div className="mt-12">
       <WelcomeMessage />
+       <UpcomingEvents />
+      <FeaturedPodcasts />
       <Tags onSelectTag={setSelectedTag} />
       <BlogPosts posts={filteredPosts} />
     </div>

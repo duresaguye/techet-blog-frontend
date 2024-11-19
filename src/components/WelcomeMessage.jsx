@@ -1,6 +1,6 @@
 // src/components/WelcomeMessage.js
 import React from 'react';
-import TechetLogo from '../assets/Techet.jpg';
+import TechetLogo from '../assets/Techet.png';
 
 const WelcomeMessage = () => {
   return (
@@ -8,18 +8,10 @@ const WelcomeMessage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="relative z-10">
           <main className="flex flex-col items-center sm:flex-row sm:items-start sm:justify-between">
-            <div className="flex-shrink-0 mb-8 sm:mb-0 sm:mr-8">
-              <img 
-                src={TechetLogo} 
-                alt="Techኢት Logo" 
-                className="w-40 h-40 rounded-full"
-              />
-            </div>
-
             <div className="text-center sm:text-left">
               <h1 className="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl">
                 <span className="block xl:inline">Hi 👋, Welcome to Techኢት </span>
-                <span className="block text-blue-600 xl:inline">Blog and Podcast</span>
+               
               </h1>
               <p className="mt-3 text-base sm:mt-5 sm:text-lg md:mt-5 md:text-xl">
                 Dive into the world of technology with us! From insightful blogs to engaging podcasts, Techኢት is your ultimate destination for staying ahead in the tech universe.
