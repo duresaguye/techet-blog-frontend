@@ -19,17 +19,16 @@ const Navbar = () => {
   };
 
   return (
-    <div className={`fixed top-0 z-50 left-0 w-full h-20 bg-transparent border-b border-gray-700 backdrop-filter backdrop-blur-lg`}>
-      <nav className="container mx-auto h-full flex items-center justify-between px-2">
+    <div className={`fixed top-0 z-50 left-0 w-full h-20 border-b border-gray-700 ${document.body.classList.contains('dark') ? 'bg-gray-800' : 'bg-white'}`}>
+      <nav className="container mx-auto h-full flex items-center justify-between ">
         <div>
-              <img 
-                src={TechetLogo} 
-                alt="Techኢት Logo" 
-                className="w-16 h-16"
-              />
-            </div>
+          <img 
+            src={TechetLogo} 
+            alt="Techኢት Logo" 
+            className="w-16 h-16"
+          />
+        </div>
         <div className="hidden lg:flex space-x-20 text-lg">
-          
           <Link to="/" className="hover:text-gray-600 cursor-pointer transition-colors duration-200">Home</Link>
           
           {/* Articles & News with Dropdown */}
@@ -40,11 +39,11 @@ const Navbar = () => {
             >
               Articles & News
               <span className="ml-2">
-              {isDropdownOpen ? (
-              <FaChevronUp className="ml-2 text-lg" />
-            ) : (
-              <FaChevronDown className="ml-2 text-lg" />
-            )}
+                {isDropdownOpen ? (
+                  <FaChevronUp className="ml-2 text-lg" />
+                ) : (
+                  <FaChevronDown className="ml-2 text-lg" />
+                )}
               </span>
             </button>
             {isDropdownOpen && (
